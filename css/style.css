@@ -1,0 +1,698 @@
+/* ==========================================================================
+   FORMA Digital – Stylesheet
+   Aufbau:
+   1. Grundlagen
+   2. Kopfbereich & Navigation
+   3. Banner / Seitentitel
+   4. Inhaltsbereiche
+   5. Leistungen
+   6. Seitenleiste
+   7. Formulare
+   8. Fußbereich
+   9. Responsive
+   ========================================================================== */
+
+
+/* 1. Grundlagen
+   -------------------------------------------------------------------------- */
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+	margin: 0;
+	background: #f4f3ef;
+	color: #333;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	line-height: 1.65;
+}
+
+img { max-width: 100%; height: auto; border: 0; vertical-align: middle; }
+
+a { color: #2c5747; text-decoration: none; }
+a:hover, a:focus { color: #1f3d33; text-decoration: underline; }
+
+h1, h2, h3, h4 {
+	font-family: Georgia, "Times New Roman", serif;
+	font-weight: normal;
+	color: #1f3d33;
+	line-height: 1.25;
+	margin: 0 0 15px;
+}
+h1 { font-size: 38px; }
+h2 { font-size: 30px; }
+h3 { font-size: 22px; }
+h4 { font-size: 18px; }
+
+p { margin: 0 0 15px; }
+
+ul, ol { margin: 0 0 15px; padding-left: 20px; }
+
+hr { border: 0; border-top: 1px solid #dcdad3; margin: 30px 0; }
+
+.container {
+	max-width: 1140px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.clearfix:after { content: ""; display: table; clear: both; }
+
+.btn {
+	display: inline-block;
+	padding: 11px 22px;
+	background: #1f3d33;
+	border: 1px solid #1f3d33;
+	border-bottom-color: #132820;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.4;
+	cursor: pointer;
+	text-decoration: none;
+}
+.btn:hover, .btn:focus { background: #2c5747; color: #fff; text-decoration: none; }
+
+.btn-hell {
+	background: #fff;
+	border-color: #fff;
+	color: #1f3d33;
+}
+.btn-hell:hover, .btn-hell:focus { background: #ebe6dc; border-color: #ebe6dc; color: #1f3d33; }
+
+.btn-rahmen {
+	background: transparent;
+	border-color: rgba(255,255,255,.7);
+	color: #fff;
+}
+.btn-rahmen:hover, .btn-rahmen:focus { background: rgba(255,255,255,.12); }
+
+.mehr { font-weight: bold; font-size: 14px; }
+.mehr:after { content: " \00BB"; }
+
+.skip-link {
+	position: absolute;
+	left: -9999px;
+	top: 0;
+	background: #fff;
+	padding: 8px 12px;
+	z-index: 100;
+}
+.skip-link:focus { left: 10px; top: 10px; }
+
+
+/* 2. Kopfbereich & Navigation
+   -------------------------------------------------------------------------- */
+
+.topbar {
+	background: #1f3d33;
+	color: #c9d3cb;
+	font-size: 12px;
+	line-height: 34px;
+}
+.topbar a { color: #fff; }
+.topbar .links { float: left; }
+.topbar .rechts { float: right; }
+
+.kopf {
+	background: #fff;
+	border-bottom: 1px solid #dcdad3;
+	box-shadow: 0 1px 3px rgba(0,0,0,.05);
+}
+.kopf .container { position: relative; }
+
+.logo {
+	float: left;
+	display: block;
+	padding: 24px 0 22px;
+	color: #1f3d33;
+	line-height: 1;
+}
+.logo:hover { text-decoration: none; color: #1f3d33; }
+.logo strong {
+	display: block;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 30px;
+	font-weight: normal;
+	letter-spacing: 4px;
+}
+.logo span {
+	display: block;
+	margin-top: 5px;
+	font-size: 10px;
+	letter-spacing: 9px;
+	color: #6b7f6f;
+	padding-left: 2px;
+}
+
+.hauptnav { float: right; }
+.hauptnav ul { list-style: none; margin: 0; padding: 0; }
+.hauptnav li { float: left; }
+.hauptnav a {
+	display: block;
+	padding: 33px 15px 29px;
+	border-bottom: 3px solid transparent;
+	color: #444;
+	font-size: 14px;
+	font-weight: bold;
+}
+.hauptnav a:hover, .hauptnav a:focus {
+	color: #1f3d33;
+	text-decoration: none;
+	border-bottom-color: #c9b99f;
+}
+.hauptnav li.aktiv a { color: #1f3d33; border-bottom-color: #1f3d33; }
+.hauptnav li.nav-anfrage a {
+	margin: 22px 0 0 10px;
+	padding: 9px 16px;
+	background: #1f3d33;
+	border: 0;
+	border-radius: 3px;
+	color: #fff;
+}
+.hauptnav li.nav-anfrage a:hover { background: #2c5747; }
+
+.menue-knopf {
+	display: none;
+	position: absolute;
+	right: 20px;
+	top: 22px;
+	padding: 8px 12px;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	color: #1f3d33;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.menue-knopf .balken {
+	display: inline-block;
+	width: 16px;
+	height: 2px;
+	background: #1f3d33;
+	position: relative;
+	vertical-align: middle;
+	margin-right: 6px;
+	top: -2px;
+}
+.menue-knopf .balken:before,
+.menue-knopf .balken:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	width: 16px;
+	height: 2px;
+	background: #1f3d33;
+}
+.menue-knopf .balken:before { top: -5px; }
+.menue-knopf .balken:after { top: 5px; }
+
+
+/* 3. Banner / Seitentitel
+   -------------------------------------------------------------------------- */
+
+.banner {
+	position: relative;
+	background: #1f3d33 url(../img/startseite-buero.jpg) center center no-repeat;
+	background-size: cover;
+	color: #fff;
+}
+.banner:before {
+	content: "";
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	background: rgba(18, 36, 30, .62);
+}
+.banner .container { position: relative; padding-top: 110px; padding-bottom: 110px; }
+.banner h1 {
+	color: #fff;
+	font-size: 46px;
+	max-width: 640px;
+	margin-bottom: 20px;
+	text-shadow: 0 1px 2px rgba(0,0,0,.25);
+}
+.banner p {
+	font-size: 18px;
+	max-width: 560px;
+	color: #e4e9e5;
+	margin-bottom: 30px;
+}
+.banner .btn { margin: 0 8px 8px 0; }
+
+.seitentitel {
+	position: relative;
+	background: #1f3d33 url(../img/banner-architektur.jpg) center center no-repeat;
+	background-size: cover;
+	color: #fff;
+}
+.seitentitel:before {
+	content: "";
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	background: rgba(18, 36, 30, .7);
+}
+.seitentitel .container { position: relative; padding-top: 50px; padding-bottom: 46px; }
+.seitentitel h1 { color: #fff; margin: 0 0 6px; }
+.seitentitel p { margin: 0; color: #d6ddd7; font-size: 16px; }
+.seitentitel.fassade { background-image: url(../img/banner-fassade.jpg); }
+.seitentitel.flur { background-image: url(../img/banner-flur.jpg); }
+
+.brotkrumen {
+	background: #fff;
+	border-bottom: 1px solid #e3e1da;
+	font-size: 13px;
+	color: #888;
+	padding: 10px 0;
+}
+.brotkrumen a { color: #666; }
+.brotkrumen span.trenner { margin: 0 6px; color: #bbb; }
+
+
+/* 4. Inhaltsbereiche
+   -------------------------------------------------------------------------- */
+
+.bereich { padding: 60px 0; }
+.bereich-weiss { background: #fff; border-top: 1px solid #e3e1da; border-bottom: 1px solid #e3e1da; }
+.bereich-titel { text-align: center; max-width: 680px; margin: 0 auto 40px; }
+.bereich-titel p { color: #666; font-size: 16px; }
+.bereich-titel h2:after {
+	content: "";
+	display: block;
+	width: 50px;
+	height: 2px;
+	background: #c9b99f;
+	margin: 18px auto 0;
+}
+
+/* einfaches Raster */
+.zeile { margin: 0 -15px; }
+.zeile:after { content: ""; display: table; clear: both; }
+.spalte-3, .spalte-4, .spalte-5, .spalte-6, .spalte-7, .spalte-8 {
+	float: left;
+	padding: 0 15px;
+	min-height: 1px;
+}
+.spalte-3 { width: 25%; }
+.spalte-4 { width: 33.3333%; }
+.spalte-5 { width: 41.6666%; }
+.spalte-6 { width: 50%; }
+.spalte-7 { width: 58.3333%; }
+.spalte-8 { width: 66.6666%; }
+
+/* Hinweisleiste unter dem Banner */
+.leiste {
+	background: #fff;
+	border-bottom: 1px solid #e3e1da;
+}
+.leiste .punkt {
+	padding: 26px 20px 22px 0;
+}
+.leiste h4 { margin-bottom: 4px; font-size: 17px; }
+.leiste p { margin: 0; font-size: 14px; color: #666; }
+.leiste .nr {
+	float: left;
+	width: 38px;
+	height: 38px;
+	margin: 2px 14px 0 0;
+	border: 2px solid #c9b99f;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 34px;
+	font-family: Georgia, serif;
+	color: #1f3d33;
+	font-size: 17px;
+}
+.leiste .text { overflow: hidden; }
+
+/* Willkommen-Block */
+.textbild img { border: 1px solid #ddd; padding: 5px; background: #fff; }
+.haken { list-style: none; padding: 0; }
+.haken li {
+	position: relative;
+	padding: 6px 0 6px 28px;
+	border-bottom: 1px dotted #d2d0c8;
+}
+.haken li:last-child { border-bottom: 0; }
+.haken li:before {
+	content: "\2713";
+	position: absolute;
+	left: 2px;
+	top: 6px;
+	color: #6b7f6f;
+	font-weight: bold;
+}
+
+/* Kasten (Teaser-Boxen) */
+.kasten {
+	background: #fff;
+	border: 1px solid #e0ded7;
+	border-radius: 3px;
+	margin-bottom: 30px;
+	box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+.kasten .bild { display: block; overflow: hidden; border-radius: 3px 3px 0 0; }
+.kasten .bild img { display: block; width: 100%; transition: opacity .2s; }
+.kasten .bild:hover img { opacity: .88; }
+.kasten .inhalt { padding: 20px 22px 22px; }
+.kasten h3 { margin-bottom: 10px; }
+.kasten h3 a { color: #1f3d33; }
+.kasten p { color: #555; font-size: 14px; }
+.kasten .gleich { min-height: 92px; }
+
+/* Aufruf-Leiste */
+.aufruf {
+	background: #6b7f6f;
+	color: #fff;
+	padding: 34px 0;
+}
+.aufruf h3 { color: #fff; margin: 0 0 4px; font-size: 24px; }
+.aufruf p { margin: 0; color: #e7ece8; }
+.aufruf .text { float: left; }
+.aufruf .knopf { float: right; padding-top: 8px; }
+
+/* Zitat / Grundsatz */
+.grundsatz {
+	border-left: 3px solid #c9b99f;
+	padding: 4px 0 4px 20px;
+	margin: 25px 0;
+	font-family: Georgia, serif;
+	font-size: 19px;
+	color: #1f3d33;
+	font-style: italic;
+}
+
+/* Ablauf-Schritte */
+.schritte { list-style: none; padding: 0; counter-reset: schritt; }
+.schritte li {
+	position: relative;
+	padding: 0 0 22px 58px;
+	counter-increment: schritt;
+}
+.schritte li:before {
+	content: counter(schritt);
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 40px;
+	height: 40px;
+	background: #1f3d33;
+	color: #fff;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 40px;
+	font-family: Georgia, serif;
+	font-size: 18px;
+}
+.schritte li:after {
+	content: "";
+	position: absolute;
+	left: 19px;
+	top: 44px;
+	bottom: 4px;
+	width: 2px;
+	background: #dcdad3;
+}
+.schritte li:last-child:after { display: none; }
+.schritte h4 { margin: 0 0 4px; padding-top: 8px; }
+.schritte p { color: #555; margin: 0; }
+
+/* Fragen & Antworten */
+.faq { border-top: 1px solid #dcdad3; margin-bottom: 20px; }
+.faq details { border-bottom: 1px solid #dcdad3; }
+.faq summary {
+	cursor: pointer;
+	padding: 15px 30px 15px 0;
+	font-weight: bold;
+	color: #1f3d33;
+	position: relative;
+	list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary:after {
+	content: "+";
+	position: absolute;
+	right: 4px;
+	top: 12px;
+	font-size: 20px;
+	font-weight: normal;
+	color: #6b7f6f;
+}
+.faq details[open] summary:after { content: "\2013"; }
+.faq details p { padding: 0 0 5px; color: #555; }
+
+/* Rechtstexte */
+.rechtstext h2 { font-size: 24px; margin-top: 35px; }
+.rechtstext h3 { font-size: 19px; margin-top: 25px; }
+.rechtstext h2:first-child { margin-top: 0; }
+.platzhalter { background: #fff3c4; padding: 0 3px; }
+
+/* Inhaltsspalte mit Rahmen */
+.inhaltsbox {
+	background: #fff;
+	border: 1px solid #e0ded7;
+	border-radius: 3px;
+	padding: 35px 40px;
+}
+
+
+/* 5. Leistungen
+   -------------------------------------------------------------------------- */
+
+.leistung {
+	padding: 40px 0;
+	border-bottom: 1px solid #dcdad3;
+}
+.leistung:first-child { padding-top: 0; }
+.leistung:last-child { border-bottom: 0; }
+.leistung img { border: 1px solid #ddd; padding: 5px; background: #fff; }
+.leistung .kennung {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: bold;
+	color: #6b7f6f;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 6px;
+}
+.leistung h2 { font-size: 28px; }
+.leistung h4 { font-size: 16px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: bold; margin: 20px 0 8px; }
+
+
+/* 6. Seitenleiste
+   -------------------------------------------------------------------------- */
+
+.seitenleiste .modul {
+	background: #fff;
+	border: 1px solid #e0ded7;
+	border-radius: 3px;
+	margin-bottom: 25px;
+}
+.seitenleiste .modul h3 {
+	font-size: 18px;
+	margin: 0;
+	padding: 14px 20px;
+	border-bottom: 1px solid #e0ded7;
+	background: #faf9f6;
+	border-radius: 3px 3px 0 0;
+}
+.seitenleiste .modul .modul-inhalt { padding: 18px 20px; font-size: 14px; }
+.seitenleiste .modul .modul-inhalt p:last-child { margin-bottom: 0; }
+.seitenleiste ul.linkliste { list-style: none; padding: 0; margin: 0; }
+.seitenleiste ul.linkliste li { border-bottom: 1px solid #eceae4; }
+.seitenleiste ul.linkliste li:last-child { border-bottom: 0; }
+.seitenleiste ul.linkliste a {
+	display: block;
+	padding: 10px 20px;
+	color: #444;
+	font-size: 14px;
+}
+.seitenleiste ul.linkliste a:before { content: "\203A"; margin-right: 8px; color: #6b7f6f; font-weight: bold; }
+.seitenleiste ul.linkliste a:hover { background: #f6f5f1; color: #1f3d33; text-decoration: none; }
+.seitenleiste .modul-dunkel { background: #1f3d33; border-color: #1f3d33; color: #d6ddd7; }
+.seitenleiste .modul-dunkel h3 { background: transparent; color: #fff; border-bottom-color: rgba(255,255,255,.15); }
+.seitenleiste .modul-dunkel a { color: #fff; }
+
+
+/* 7. Formulare
+   -------------------------------------------------------------------------- */
+
+.formular .feld { margin-bottom: 18px; }
+.formular label {
+	display: block;
+	font-weight: bold;
+	font-size: 14px;
+	margin-bottom: 5px;
+	color: #333;
+}
+.formular label .pflicht { color: #a33; }
+.formular label .optional { font-weight: normal; color: #888; font-size: 13px; }
+.formular input[type=text],
+.formular input[type=email],
+.formular input[type=tel],
+.formular select,
+.formular textarea {
+	display: block;
+	width: 100%;
+	padding: 10px 12px;
+	border: 1px solid #c9c7c0;
+	border-radius: 3px;
+	background: #fff;
+	font-family: inherit;
+	font-size: 15px;
+	color: #333;
+	box-shadow: inset 0 1px 2px rgba(0,0,0,.06);
+}
+.formular select { height: 43px; }
+.formular textarea { min-height: 160px; resize: vertical; }
+.formular input:focus,
+.formular select:focus,
+.formular textarea:focus {
+	outline: 0;
+	border-color: #6b7f6f;
+	box-shadow: 0 0 0 3px rgba(107,127,111,.18);
+}
+.formular .feld.fehler input,
+.formular .feld.fehler textarea { border-color: #b94a48; }
+.formular .fehlertext { display: none; color: #b94a48; font-size: 13px; margin-top: 4px; }
+.formular .feld.fehler .fehlertext { display: block; }
+.formular .checkbox label { font-weight: normal; font-size: 14px; color: #555; padding-left: 26px; position: relative; }
+.formular .checkbox input { position: absolute; left: 0; top: 3px; }
+.formular .hinweis { font-size: 13px; color: #777; }
+.formular .btn { font-size: 15px; padding: 12px 28px; }
+.formular .btn[disabled] { opacity: .7; cursor: wait; }
+.honig { position: absolute !important; left: -5000px !important; }
+
+.meldung {
+	padding: 14px 18px;
+	border-radius: 3px;
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+.meldung-fehler { background: #f2dede; border: 1px solid #ebccd1; color: #a94442; }
+.meldung-ok { background: #e3eee6; border: 1px solid #c6dccb; color: #2c5747; }
+
+
+/* 8. Fußbereich
+   -------------------------------------------------------------------------- */
+
+.fuss {
+	background: #1a2f28;
+	color: #aebbb1;
+	font-size: 14px;
+	padding: 50px 0 20px;
+}
+.fuss h4 {
+	color: #fff;
+	font-size: 17px;
+	margin-bottom: 16px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.fuss a { color: #d6ddd7; }
+.fuss a:hover { color: #fff; }
+.fuss .btn-hell, .fuss .btn-hell:hover { color: #1f3d33; text-decoration: none; }
+.fuss ul { list-style: none; padding: 0; }
+.fuss ul li { padding: 3px 0; }
+.fuss .fuss-logo { color: #fff; font-family: Georgia, serif; font-size: 22px; letter-spacing: 3px; margin-bottom: 12px; display: block; }
+.fuss .fuss-logo small { display: block; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 9px; letter-spacing: 7px; color: #8ea193; margin-top: 3px; }
+.fuss-unten {
+	border-top: 1px solid rgba(255,255,255,.1);
+	margin-top: 25px;
+	padding-top: 18px;
+	font-size: 13px;
+	color: #8ea193;
+}
+.fuss-unten .links { float: left; }
+.fuss-unten .rechts { float: right; }
+.fuss-unten a { color: #aebbb1; margin-left: 15px; }
+
+.nach-oben {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 42px;
+	height: 42px;
+	line-height: 40px;
+	text-align: center;
+	background: #1f3d33;
+	color: #fff;
+	border-radius: 3px;
+	font-size: 20px;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .25s, visibility .25s;
+	box-shadow: 0 1px 4px rgba(0,0,0,.2);
+}
+.nach-oben.sichtbar { opacity: .85; visibility: visible; }
+.nach-oben:hover { opacity: 1; color: #fff; text-decoration: none; }
+
+
+/* 9. Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 991px) {
+	.hauptnav a { padding-left: 9px; padding-right: 9px; font-size: 13px; }
+	.hauptnav li.nav-anfrage a { margin-left: 4px; }
+	.banner h1 { font-size: 40px; }
+	.spalte-3 { width: 50%; }
+	.leiste .punkt { padding-right: 10px; }
+}
+
+@media (max-width: 767px) {
+	body { font-size: 15px; }
+	h1 { font-size: 30px; }
+	h2 { font-size: 26px; }
+	.container { padding: 0 16px; }
+
+	.topbar .rechts { display: none; }
+	.topbar .links { float: none; text-align: center; }
+
+	.logo { padding: 18px 0 16px; }
+	.logo strong { font-size: 25px; }
+
+	.menue-knopf { display: block; top: 17px; right: 16px; }
+	.hauptnav { float: none; clear: both; display: none; border-top: 1px solid #e3e1da; margin: 0 -16px; }
+	.hauptnav.offen { display: block; }
+	.hauptnav li { float: none; border-bottom: 1px solid #eceae4; }
+	.hauptnav a { padding: 12px 16px; border-bottom: 0; border-left: 3px solid transparent; font-size: 15px; }
+	.hauptnav li.aktiv a { border-left-color: #1f3d33; border-bottom: 0; background: #f6f5f1; }
+	.hauptnav li.nav-anfrage { border-bottom: 0; padding: 12px 16px; }
+	.hauptnav li.nav-anfrage a { margin: 0; text-align: center; padding: 11px 16px; }
+
+	.banner .container { padding-top: 60px; padding-bottom: 60px; }
+	.banner h1 { font-size: 32px; }
+	.banner p { font-size: 16px; }
+
+	.seitentitel .container { padding-top: 34px; padding-bottom: 30px; }
+
+	.zeile { margin: 0; }
+	.spalte-3, .spalte-4, .spalte-5, .spalte-6, .spalte-7, .spalte-8 { float: none; width: auto; padding: 0; }
+
+	.leiste .punkt { padding: 18px 0; border-bottom: 1px solid #eceae4; }
+	.bereich { padding: 40px 0; }
+	.textbild { margin-bottom: 25px; }
+	.kasten .gleich { min-height: 0; }
+
+	.aufruf .text, .aufruf .knopf { float: none; }
+	.aufruf .knopf { padding-top: 16px; }
+
+	.leistung .spalte-5 { margin-bottom: 20px; }
+	.inhaltsbox { padding: 22px 18px; }
+	.seitenleiste { margin-top: 35px; }
+
+	.fuss .spalte-3 { margin-bottom: 20px; }
+	.fuss-unten .links, .fuss-unten .rechts { float: none; }
+	.fuss-unten .rechts { margin-top: 6px; }
+	.fuss-unten a { margin: 0 15px 0 0; }
+}
+
+@media print {
+	.topbar, .hauptnav, .menue-knopf, .aufruf, .fuss, .nach-oben, .brotkrumen { display: none !important; }
+	.banner, .seitentitel { background: none !important; color: #000; }
+	.banner:before, .seitentitel:before { display: none; }
+	.banner h1, .seitentitel h1, .banner p, .seitentitel p { color: #000; }
+}

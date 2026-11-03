@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Kontakt & Anfrage – FORMA Digital</title>
+	<meta name="description" content="Nehmen Sie Kontakt zu FORMA Digital auf: unverbindliche Anfrage zu Website, Social Media, Google oder Betreuung.">
+	<meta name="robots" content="index,follow">
+	<meta name="theme-color" content="#1f3d33">
+	<link rel="icon" href="favicon.svg" type="image/svg+xml">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+
+<div class="topbar">
+	<div class="container clearfix">
+		<div class="links">Websites &middot; Social Media &middot; Google &middot; Betreuung für Unternehmen</div>
+		<div class="rechts">E-Mail: <a href="mailto:philippdachtler01@gmail.com">philippdachtler01@gmail.com</a></div>
+	</div>
+</div>
+
+<header class="kopf">
+	<div class="container clearfix">
+		<a class="logo" href="index.html" title="Zur Startseite"><strong>FORMA</strong><span>DIGITAL</span></a>
+		<button class="menue-knopf" id="menueKnopf" type="button" aria-expanded="false" aria-controls="hauptnav"><span class="balken"></span>Menü</button>
+		<nav class="hauptnav" id="hauptnav" aria-label="Hauptnavigation">
+			<ul>
+				<li><a href="index.html">Startseite</a></li>
+				<li><a href="leistungen.html">Leistungen</a></li>
+				<li><a href="arbeitsweise.html">Arbeitsweise</a></li>
+				<li><a href="fragen.html">Häufige Fragen</a></li>
+				<li class="nav-anfrage aktiv"><a href="kontakt.html">Kontakt &amp; Anfrage</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<main id="inhalt">
+
+<div class="seitentitel">
+	<div class="container">
+		<h1>Kontakt &amp; Anfrage</h1>
+		<p>Schreiben Sie uns, wobei wir Sie unterstützen können.</p>
+	</div>
+</div>
+<div class="brotkrumen">
+	<div class="container"><a href="index.html">Startseite</a><span class="trenner">&raquo;</span>Kontakt</div>
+</div>
+
+<div class="bereich">
+	<div class="container">
+		<div class="zeile">
+			<div class="spalte-8">
+				<div class="inhaltsbox">
+					<h2>Anfrage stellen</h2>
+					<p>Beschreiben Sie kurz Ihr Vorhaben. Wir melden uns in der Regel innerhalb von zwei Werktagen persönlich bei Ihnen. Felder mit <span style="color:#a33">*</span> sind Pflichtfelder.</p>
+
+					<div class="meldung meldung-fehler" id="formMeldung" style="display:none;">Beim Senden ist leider ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder schreiben Sie direkt an <a href="mailto:philippdachtler01@gmail.com">philippdachtler01@gmail.com</a>.</div>
+
+					<!-- Versand über FormSubmit (formsubmit.co) an philippdachtler01@gmail.com.
+					     Alternative für Webspace mit PHP: action="kontakt.php" setzen (siehe README). -->
+					<form class="formular" id="kontaktformular" action="https://formsubmit.co/philippdachtler01@gmail.com" method="post" accept-charset="utf-8">
+						<input type="hidden" name="_subject" value="Neue Anfrage über forma-digital">
+						<input type="hidden" name="_template" value="table">
+						<input type="hidden" name="_captcha" value="false">
+						<input type="hidden" name="_next" value="danke.html">
+						<input type="text" name="_honey" class="honig" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+						<div class="zeile">
+							<div class="spalte-6">
+								<div class="feld">
+									<label for="name">Name <span class="pflicht">*</span></label>
+									<input type="text" id="name" name="Name" autocomplete="name" required maxlength="120">
+									<div class="fehlertext">Bitte geben Sie Ihren Namen an.</div>
+								</div>
+							</div>
+							<div class="spalte-6">
+								<div class="feld">
+									<label for="firma">Unternehmen <span class="optional">(optional)</span></label>
+									<input type="text" id="firma" name="Unternehmen" autocomplete="organization" maxlength="160">
+								</div>
+							</div>
+						</div>
+						<div class="zeile">
+							<div class="spalte-6">
+								<div class="feld">
+									<label for="email">E-Mail-Adresse <span class="pflicht">*</span></label>
+									<input type="email" id="email" name="email" autocomplete="email" required maxlength="160">
+									<div class="fehlertext">Bitte geben Sie eine gültige E-Mail-Adresse an.</div>
+								</div>
+							</div>
+							<div class="spalte-6">
+								<div class="feld">
+									<label for="telefon">Telefon <span class="optional">(optional, für Rückruf)</span></label>
+									<input type="tel" id="telefon" name="Telefon" autocomplete="tel" maxlength="40">
+								</div>
+							</div>
+						</div>
+						<div class="feld">
+							<label for="bereich">Worum geht es?</label>
+							<select id="bereich" name="Bereich">
+								<option value="Noch offen">Bitte auswählen</option>
+								<option value="Website">Website</option>
+								<option value="Social Media">Social Media</option>
+								<option value="Google">Google &amp; Sichtbarkeit</option>
+								<option value="Analyse">Analyse &amp; Auswertung</option>
+								<option value="E-Mail & Einrichtung">E-Mail &amp; Einrichtung</option>
+								<option value="Betreuung">Laufende Betreuung</option>
+								<option value="Mehrere Bereiche">Mehrere Bereiche</option>
+								<option value="Sonstiges">Sonstiges</option>
+							</select>
+						</div>
+						<div class="feld">
+							<label for="nachricht">Ihre Nachricht <span class="pflicht">*</span></label>
+							<textarea id="nachricht" name="Nachricht" required maxlength="5000" placeholder="Was möchten Sie umsetzen? Gibt es schon eine Website oder bestehende Konten?"></textarea>
+							<div class="fehlertext">Bitte schreiben Sie uns kurz, worum es geht.</div>
+						</div>
+						<div class="feld checkbox">
+							<label for="datenschutz"><input type="checkbox" id="datenschutz" name="Datenschutz" value="akzeptiert" required> Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. Weitere Informationen in der <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>. <span class="pflicht">*</span></label>
+							<div class="fehlertext">Bitte bestätigen Sie die Datenschutzhinweise.</div>
+						</div>
+						<p><button class="btn" type="submit">Anfrage absenden</button></p>
+						<p class="hinweis">Ihre Angaben werden ausschließlich zur Beantwortung Ihrer Anfrage verwendet und nicht an Dritte weitergegeben.</p>
+					</form>
+				</div>
+			</div>
+			<div class="spalte-4">
+				<aside class="seitenleiste">
+					<div class="modul">
+						<h3>Kontakt</h3>
+						<div class="modul-inhalt">
+							<p><strong>FORMA Digital</strong></p>
+							<p>E-Mail:<br><a href="mailto:philippdachtler01@gmail.com">philippdachtler01@gmail.com</a></p>
+							<p style="margin-bottom:0">Termine für ein Gespräch vor Ort oder per Video nach Vereinbarung.</p>
+						</div>
+					</div>
+					<div class="modul">
+						<h3>Wie geht es weiter?</h3>
+						<div class="modul-inhalt">
+							<ul class="haken" style="margin:0">
+								<li>Wir lesen Ihre Anfrage persönlich.</li>
+								<li>Sie erhalten eine Antwort, meist innerhalb von zwei Werktagen.</li>
+								<li>Wir vereinbaren ein kurzes Erstgespräch.</li>
+								<li>Danach bekommen Sie ein schriftliches Angebot.</li>
+							</ul>
+						</div>
+					</div>
+					<div class="modul">
+						<div class="modul-inhalt" style="padding:6px">
+							<img src="img/workshop.jpg" alt="Besprechung mit Whiteboard" width="900" height="600">
+						</div>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</div>
+</div>
+</main>
+
+<footer class="fuss">
+	<div class="container">
+		<div class="zeile">
+			<div class="spalte-3">
+				<a class="fuss-logo" href="index.html">FORMA<small>DIGITAL</small></a>
+				<p>Websites, Social Media, Google und die technische Einrichtung für kleine und mittlere Unternehmen. Persönlich betreut.</p>
+			</div>
+			<div class="spalte-3">
+				<h4>Leistungen</h4>
+				<ul>
+					<li><a href="leistungen.html#websites">Websites</a></li>
+					<li><a href="leistungen.html#social-media">Social Media</a></li>
+					<li><a href="leistungen.html#google">Google &amp; Sichtbarkeit</a></li>
+					<li><a href="leistungen.html#analyse">Analyse &amp; Auswertung</a></li>
+					<li><a href="leistungen.html#einrichtung">E-Mail &amp; Einrichtung</a></li>
+					<li><a href="leistungen.html#betreuung">Laufende Betreuung</a></li>
+				</ul>
+			</div>
+			<div class="spalte-3">
+				<h4>Informationen</h4>
+				<ul>
+					<li><a href="arbeitsweise.html">Arbeitsweise</a></li>
+					<li><a href="fragen.html">Häufige Fragen</a></li>
+					<li><a href="kontakt.html">Kontakt</a></li>
+					<li><a href="impressum.html">Impressum</a></li>
+					<li><a href="datenschutz.html">Datenschutz</a></li>
+				</ul>
+			</div>
+			<div class="spalte-3">
+				<h4>Kontakt</h4>
+				<p>FORMA Digital<br>
+				E-Mail: <a href="mailto:philippdachtler01@gmail.com">philippdachtler01@gmail.com</a></p>
+				<p><a class="btn btn-hell" href="kontakt.html">Anfrage stellen</a></p>
+			</div>
+		</div>
+		<div class="fuss-unten clearfix">
+			<div class="links">&copy; <span id="jahr">2026</span> FORMA Digital. Alle Rechte vorbehalten.</div>
+			<div class="rechts"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+		</div>
+	</div>
+</footer>
+
+<a class="nach-oben" id="nachOben" href="#inhalt" title="Nach oben" aria-label="Nach oben">&uarr;</a>
+
+<script src="js/main.js"></script>
+</body>
+</html>
